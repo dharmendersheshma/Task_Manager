@@ -1,6 +1,6 @@
 # Nodejs and MongoDB web app
 
-### Go to `http://127.0.0.1:9000` on browser after starting app.js server script.
+### Go to `http://127.0.0.1:9000` on browser after starting app.js server script. Make sure mongodb service is running and default "test" database is present in it.
 
 #### It has three imortant routes:
 1. Worker Login: for login of workers to check tasks
