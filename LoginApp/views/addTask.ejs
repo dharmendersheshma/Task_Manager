@@ -1,0 +1,114 @@
+<h1>Add Tasks</h1>
+
+<form action="/addTask" method="POST">
+    <div>
+        <label for="task">Task</label>
+        <input type="String" id="task" name="task" required>
+    </div>
+    <div>
+        <label for="time">Time for task(days)</label>
+        <input type="int" id="time" name="time" required>
+    </div>
+
+    <button type="submit">Add to to-do list</button>
+</form>
+
+<br>
+
+<html >
+<h1>Tasks made by me</h1>
+<body>
+    <section>
+        <h1>Pending Task</h1>
+    <ul>
+        <% for(var i=0; i<PendingT.length; i++) {%>
+            
+            <li style="border: 1px solid black;">
+                <span>Task ID: </span><%= PendingT[i]._id %>
+                <br/>
+                <span>Task: </span><%= PendingT[i].Task %>
+                <br/>
+                <span>Created by: </span><%= PendingT[i].owner %>
+                <br/>
+                <span>Points awarded: </span><%= PendingT[i].points %>
+                <br/>
+                <span>Time Left: </span><%= PendingT[i].timeleft %>
+                <br/>
+                <span>Status of completion: </span><%= PendingT[i].completed %>
+                <br/>
+                <span>Is submitted: </span><%= PendingT[i].submitted %>
+                <br/>
+                <form name="form1" action="/taskDetails" method="POST">
+                    <input type='hidden' name='id' value= <%= PendingT[i]._id %>/> 
+                    <button type="submit">Make submission</button>
+                </form>
+                <form action="/taskUpdate" method="POST">
+                    <input type='hidden' name='id' value= <%= PendingT[i]._id %>/> 
+                    <label for="task">Updated task</label>
+                    <input type="text" id="task" name="task" required>
+                    <button type="submit">Update task</button>
+                </form>
+                
+            </li>
+            
+        <% } %>
+    </ul>
+    </section>
+
+    <section>
+        <h1>Assigned Task</h1>
+    <ul>
+        <% for(var i=0; i<AssignedT.length; i++) {%>
+            
+            <li style="border: 1px solid black;">
+                <span>Task ID: </span><%= AssignedT[i]._id %>
+                <br/>
+                <span>Task: </span><%= AssignedT[i].Task %>
+                <br/>
+                <span>Created by: </span><%= AssignedT[i].owner %>
+                <br/>
+                <span>Points awarded: </span><%= AssignedT[i].points %>
+                <br/>
+                <span>Time Left: </span><%= AssignedT[i].timeleft %>
+                <br/>
+                <span>Status of completion: </span><%= AssignedT[i].completed %>
+                <br/>
+                <span>Is submitted: </span><%= AssignedT[i].submitted %>
+                <br/>
+                
+            </li>
+            
+        <% } %>
+    </ul>
+    </section>
+
+    <section>
+        <h1>Completed Task</h1>
+    <ul>
+        <% for(var i=0; i<DoneT.length; i++) {%>
+            
+            <li style="border: 1px solid black;">
+                <span>Task ID: </span><%= DoneT[i]._id %>
+                <br/>
+                <span>Task: </span><%= DoneT[i].Task %>
+                <br/>
+                <span>Created by: </span><%= DoneT[i].owner %>
+                <br/>
+                <span>Points awarded: </span><%= DoneT[i].points %>
+                <br/>
+                <span>Time Left: </span><%= DoneT[i].timeleft %>
+                <br/>
+                <span>Status of completion: </span><%= DoneT[i].completed %>
+                <br/>
+                <span>Is submitted: </span><%= DoneT[i].submitted %>
+                <br/>
+                
+            </li>
+            
+        <% } %>
+    </ul>
+    </section>
+</body>
+
+</html>
+<a href="/">Go to home page</a>
