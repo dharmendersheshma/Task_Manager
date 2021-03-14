@@ -1,5 +1,8 @@
 <html >
 
+<div>
+    <label>Total Points :</label> <%= point %>
+</div>
 <body>
     <section>
         <h1>Pending Task</h1>
@@ -21,7 +24,7 @@
                 <br/>
                 <span>Is submitted: </span><%= PendingT[i].submitted %>
                 <br/>
-                <form name="form1" action="/taskDetails" method="POST">
+                <form name="form1" action="/taskSubmit" method="POST">
                     <input type='hidden' name='id' value= <%= PendingT[i]._id %>/> 
                     <button type="submit">Make submission</button>
                 </form>

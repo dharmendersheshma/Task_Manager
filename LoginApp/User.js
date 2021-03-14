@@ -3,7 +3,8 @@ mongoose.connect('mongodb://localhost/test')
 
 var userSchema = new mongoose.Schema({
     email: {type: String, unique: true},
-    password: {type: String}
+    password: {type: String},
+    points: {type: Number, default: 0}
 })
 
 userSchema.virtual("tasks", {

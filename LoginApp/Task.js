@@ -26,6 +26,10 @@ const taskSchema = new mongoose.Schema({
         type: String,
         default: "0",
     },
+    submittedBy: {
+        type: String,
+        default: "Not available",
+    },
 }, {
     timestamps: true,
 });

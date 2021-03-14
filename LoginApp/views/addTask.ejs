@@ -38,10 +38,7 @@
                 <br/>
                 <span>Is submitted: </span><%= PendingT[i].submitted %>
                 <br/>
-                <form name="form1" action="/taskDetails" method="POST">
-                    <input type='hidden' name='id' value= <%= PendingT[i]._id %>/> 
-                    <button type="submit">Make submission</button>
-                </form>
+                
                 <form action="/taskUpdate" method="POST">
                     <input type='hidden' name='id' value= <%= PendingT[i]._id %>/> 
                     <label for="task">Updated task</label>
@@ -75,7 +72,13 @@
                 <br/>
                 <span>Is submitted: </span><%= AssignedT[i].submitted %>
                 <br/>
-                
+                <form name="form1" action="/taskApproval" method="POST">
+                    <input type='hidden' name='id' value= <%= PendingT[i]._id %>/> 
+                    <label for="points">Points: </label>
+                    <input type="text" id="points" name="points" required>
+                    <input type='hidden' name='submittedBy' value= <%= PendingT[i].submittedBy %>/> 
+                    <button type="submit">Approve Task</button>
+                </form>
             </li>
             
         <% } %>
