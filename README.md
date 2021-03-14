@@ -10,7 +10,7 @@
 ##### Note: Here I have used only one route for user registartion for simplicity so storing both managers and workers in same collection in mongodb. 
 
 #### Tasks are of three types:
-1. Compeleted: which are already completed and aproved by manager.
+1. Compeleted: which are already completed and approved by manager.
 2. Assigned: which are done by worker but waiting for approval from manager
 3. Pending: which are still to be doe by user.
 
