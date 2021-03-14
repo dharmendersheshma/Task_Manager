@@ -7,7 +7,7 @@
 2. Manager Login: for login of managers to add/update/approve tasks
 3. Registration: user registration
 
-##### Note: Here I have used only one route for user registartion for simplicity so storing both managers and workers in same collection in mongodb. Due to that didn't implemented total score functionality.
+##### Note: Here I have used only one route for user registartion for simplicity so storing both managers and workers in same collection in mongodb. 
 
 #### Tasks are of three types:
 1. Compeleted: which are already completed and aproved by manager.
