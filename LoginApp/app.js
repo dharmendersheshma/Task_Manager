@@ -223,7 +223,8 @@ app.get('/getTask', async function(req,res){
             dbo.collection("myusers").find(query4).toArray(function (err, result4) {
                 if (err)
                     throw err;
-                score = result4.ponits;
+                score = result4.points;
+                console.log("4th result for score is "+result4)
                 console.log("score is " + score);
             });
 
@@ -266,10 +267,10 @@ app.post('/taskSubmit', async function(req,res){
             res1 = result1
         });
         var query4 = { email: logged_in_user };
-        dbo.collection("myuser").find(query4).toArray(function (err, result2) {
+        dbo.collection("myusers").find(query4).toArray(function (err, result2) {
             if (err)
                 throw err;
-            score = result2.ponits;
+            score = result2.points;
             console.log("score is " + score);
         });
         db.close();
@@ -304,12 +305,12 @@ app.post('/taskSubmit', async function(req,res){
                 console.log("Task approved");
             });
             var queryTemp = { submittedBy: subittedby };
-            dbo.collection("myuser").find(queryTemp).toArray(function(err, result) {
+            dbo.collection("myusers").find(queryTemp).toArray(function(err, result) {
                 if (err) throw err;
                 console.log(result);
                 oldP = result.points
             });
-            dbo.collection("myuser").updateOne({submittedBy:  subittedby},{$set :{ponits: oldP + score}}, function(err, res) {
+            dbo.collection("myusers").updateOne({submittedBy:  subittedby},{$set :{ponits: oldP + score}}, function(err, res) {
                 if (err) throw err;
                 console.log("score updated");
             });

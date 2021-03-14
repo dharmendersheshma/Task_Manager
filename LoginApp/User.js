@@ -13,5 +13,5 @@ userSchema.virtual("tasks", {
     foreignField: "owner",
     });
 
-var User = mongoose.model('myuser', userSchema)
+var User = mongoose.model('myusers', userSchema)
 module.exports = User
